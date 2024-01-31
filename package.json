@@ -28,14 +28,17 @@
     "next": "14.0.4",
     "react": "^18",
     "react-chartjs-2": "^5.2.0",
+    "react-csv": "^2.2.2",
     "react-day-picker": "^8.10.0",
     "react-dom": "^18",
     "tailwind-merge": "^2.2.1",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
+    "@types/react-csv": "^1.1.10",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",

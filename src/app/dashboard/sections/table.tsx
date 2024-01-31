@@ -1,5 +1,7 @@
 "use client";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
+import { CSVLink } from "react-csv";
+import XLSX from "xlsx";
 import React from "react";
 import SA from "../../../../public/sa-flag.svg";
 import Chrome from "../../../../public/ic_chrome.svg";
@@ -89,6 +91,19 @@ function TableTitleSubtitle({
 }
 
 export default function EventTable() {
+  // const exportToExcel = (data) => {
+  //   const ws = XLSX.utils.json_to_sheet(data);
+  //   const wb = XLSX.utils.book_new();
+  //   XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
+  //   const excelFile = XLSX.write(wb, { bookType: "xlsx", type: "blob" });
+  //   const url = window.URL.createObjectURL(new Blob([excelFile]));
+  //   const a = document.createElement("a");
+  //   a.href = url;
+  //   a.download = "table_data.xlsx";
+  //   a.click();
+  //   window.URL.revokeObjectURL(url);
+  // };
+
   const events = [
     {
       id: "ee-22",
