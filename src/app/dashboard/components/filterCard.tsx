@@ -9,7 +9,7 @@ import {
 import { Add, Commit, Error, WatchLater } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 
-const _FILTERS = [
+export const _FILTERS = [
   {
     id: "100",
     icon: <Commit fontSize="small" />,
@@ -33,7 +33,11 @@ const _FILTERS = [
   },
 ];
 
-export function FilterCard() {
+interface IProps {
+  handleSelection: (id: string) => void;
+}
+
+export function FilterCard(props: IProps) {
   const [filters, setFilters] = useState(_FILTERS);
   const [value, setValue] = useState<string>("");
 
@@ -53,10 +57,10 @@ export function FilterCard() {
       <PopoverTrigger asChild>
         <button
           type="button"
-          className="text-gray-500 p-2 rounded-md border-dotted border-2 border-gray-400 flex items-center font-semibold"
+          className="text-gray-500 p-1 rounded-md border-dotted border-2 border-gray-400 flex items-center font-semibold"
         >
           <Add fontSize="small" sx={{ color: "gray" }} />
-          <p>Add filter </p>
+          <p className="text-sm">Add filter </p>
         </button>
       </PopoverTrigger>
       <PopoverContent className="w-80">
@@ -81,6 +85,7 @@ export function FilterCard() {
               return (
                 <div
                   key={filter.id}
+                  onClick={() => props.handleSelection(filter.id)}
                   className="flex flex-col ease-in duration-200 hover:bg-gray-50 p-3 rounded-sm cursor-pointer"
                 >
                   <Label htmlFor="maxWidth">{filter.type}</Label>
