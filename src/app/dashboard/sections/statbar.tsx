@@ -17,13 +17,13 @@ interface ISTATBUTTONPROPS {
 const StatButton: React.FC<ISTATBUTTONPROPS> = React.memo(
   ({ icon, type, count, isSelected, handleChange, removeStats, id }) => {
     icon = React.cloneElement(icon as React.ReactElement, {
-      htmlColor: isSelected && 'blue',
+      htmlColor: isSelected && 'hsl(var(--primary))',
     });
     return (
       <>
         <div
-          className={`flex items-center gap-2 justify-between rounded-sm px-2 mx-1 hover:bg-[#f6f5f5] cursor-pointer ease-in duration-200 text-sm font-semibold ${
-            isSelected ? 'text-black bg-[#f6f5f5] mr-4' : 'text-gray-500'
+          className={`flex items-center gap-2 justify-between rounded-sm px-2 mx-1 hover:accent cursor-pointer ease-in duration-200 text-sm font-semibold ${
+            isSelected ? 'text-foreground bg-background mr-4' : 'text-gray-500'
           }`}
           onClick={handleChange}
         >

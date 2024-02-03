@@ -8,8 +8,8 @@ import SvgColor from 'src/components/svg-color';
 
 // ----------------------------------------------------------------------
 
-const icon = (name: string) => (
-  <SvgColor src={`/assets/icons/navbar/${name}.svg`} sx={{ width: 1, height: 1 }} />
+const icon = (name: string, height = 1, width = 1) => (
+  <SvgColor src={`/assets/icons/navbar/${name}.svg`} sx={{ width: width, height: height }} />
   // OR
   // <Iconify icon="fluent:mail-24-filled" />
   // https://icon-sets.iconify.design/solar/

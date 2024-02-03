@@ -88,7 +88,7 @@ function TableLogoDescription({
       </svg>
 
       <div className="flex flex-col ml-2">
-        <p className="text-sm font-semibold text-gray-900">{title}</p>
+        <p className="text-sm font-semibold text-muted-foreground">{title}</p>
         <p className="text-xs text-gray-500">{subText}</p>
       </div>
     </main>
@@ -106,7 +106,7 @@ function TableTitleSubtitle({
 }) {
   return (
     <div className="flex flex-col space-y-2">
-      <p className="text-sm font-semibold text-gray-900">{title}</p>
+      <p className="text-sm font-semibold text-muted-foreground">{title}</p>
       <p className="text-xs text-gray-500">{subTitle}</p>
     </div>
   );
@@ -184,18 +184,18 @@ export default function EventTable() {
     <div className="px-4 sm:px-6 lg:px-8">
       <div className="sm:flex sm:items-center">
         <div className="sm:flex-auto">
-          <h1 className="text-base font-semibold leading-6 text-gray-900">1232 Events matched</h1>
+          <h1 className="text-base font-semibold leading-6 text-foreground">1232 Events matched</h1>
         </div>
         <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none flex items-center gap-2 flex-wrap">
           <button
             type="button"
-            className="text-gray-500 inline-flex items-center duration-200 ease-in cursor-pointer rounded-md bg-white px-2 py-2 text-sm font-semibold shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+            className="text-gray-500 inline-flex items-center duration-200 ease-in cursor-pointer rounded-md bg-transparent px-2 py-2 text-sm font-semibold shadow-sm ring-1 ring-inset ring-border hover:bg-muted"
           >
             Columns
           </button>
           <button
             type="button"
-            className=" text-gray-500 inline-flex items-center duration-200 ease-in cursor-pointer rounded-md bg-white px-2 py-2 text-sm font-semibold shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+            className=" text-gray-500 inline-flex items-center duration-200 ease-in cursor-pointer rounded-md bg-transparent px-2 py-2 text-sm font-semibold shadow-sm ring-1 ring-inset ring-border hover:bg-muted"
           >
             Export
           </button>
@@ -205,7 +205,7 @@ export default function EventTable() {
           >
             <a
               href="#"
-              className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+              className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-border hover:bg-muted focus:z-20 focus:outline-offset-0"
             >
               <span className="sr-only">Previous</span>
               <ChevronLeft className="h-5 w-5" aria-hidden="true" />
@@ -213,7 +213,7 @@ export default function EventTable() {
 
             <a
               href="#"
-              className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+              className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-border hover:bg-muted focus:z-20 focus:outline-offset-0"
             >
               <span className="sr-only">Next</span>
               <ChevronRight className="h-5 w-5" aria-hidden="true" />
@@ -224,29 +224,29 @@ export default function EventTable() {
       <div className="mt-8 flow-root">
         <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
-            <table className="min-w-full divide-y divide-gray-300">
+            <table className="min-w-full divide-y divide-border">
               <thead>
                 <tr>
                   {headers.map((header) => (
                     <th
                       key={header.key}
                       scope="col"
-                      className="whitespace-nowrap py-3.5 px-2 text-left text-sm font-semibold text-gray-900 sm:pl-0"
+                      className="whitespace-nowrap py-3.5 px-2 text-left text-sm font-semibold text-foreground sm:pl-0"
                     >
                       {header.name}
                     </th>
                   ))}
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200 bg-white">
+              <tbody className="divide-y divide-border bg-background">
                 {events.map((event) => {
                   return (
                     <React.Fragment key={event.id}>
-                      <tr className="border-t border-gray-200">
+                      <tr className="border-t border-border">
                         <th
                           colSpan={24}
                           scope="colgroup"
-                          className="bg-gray-50 py-2 text-left text-sm font-semibold text-gray-900 sm: pl-2"
+                          className="bg-muted py-2 text-left text-sm font-semibold text-muted-foreground sm:pl-2"
                         >
                           {event.category}
                         </th>
@@ -254,17 +254,17 @@ export default function EventTable() {
                       {event.data.map((item) => {
                         return (
                           <tr key={item.id} className="py-4">
-                            <td className="whitespace-nowrap py-6 pl-4 text-sm text-gray-500 sm:pl-0">
+                            <td className="whitespace-nowrap py-6 pl-4 text-sm text-gray-500 sm:pl-2">
                               {item.time}
                             </td>
-                            <td className="whitespace-nowrap py-6 text-sm font-medium text-gray-900">
+                            <td className="whitespace-nowrap py-6 text-sm font-medium text-muted-foreground">
                               <TableTitleSubtitle
                                 title={item.policy}
                                 subTitle="Policy"
                                 verboseLevel={1}
                               />
                             </td>
-                            <td className="whitespace-nowrap py-6 text-sm text-gray-900">
+                            <td className="whitespace-nowrap py-6 text-sm text-muted-foreground">
                               {item.risk}
                             </td>
                             <td className="whitespace-nowrap py-6 text-sm text-gray-500">

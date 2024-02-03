@@ -8,10 +8,10 @@ function DateTimeFilter() {
   return (
     <div className="isolate inline-flex -space-x-px  rounded-md shadow-sm">
       <DatePicker />
-      <div className="relative inline-flex items-center px-2 py-1 text-sm font-semibold text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+      <div className="relative inline-flex items-center px-2 py-1 text-sm font-semibold text-gray-400 ring-1 ring-inset ring-border hover:bg-muted focus:z-20 focus:outline-offset-0">
         <Search className="h-4 w-4" fontSize="small" aria-hidden="true" />
       </div>
-      <div className="relative inline-flex items-center rounded-r-md px-2 py-1 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+      <div className="relative inline-flex items-center rounded-r-md px-2 py-1 text-gray-400 ring-1 ring-inset ring-border hover:bg-muted focus:z-20 focus:outline-offset-0">
         <span className="sr-only">Next</span>
         <PushPin className="h-4 w-4" fontSize="small" aria-hidden="true" />
       </div>

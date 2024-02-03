@@ -47,13 +47,13 @@ const NavItem = forwardRef<HTMLDivElement, NavItemProps>(
         {...other}
       >
         {!subItem && icon && (
-          <Box component="span" className="icon">
+          <Box component="span" height={24} width={24}>
             {icon}
           </Box>
         )}
 
         {subItem && icon ? (
-          <Box component="span" className="icon">
+          <Box component="span" height={24} width={24}>
             {icon}
           </Box>
         ) : (

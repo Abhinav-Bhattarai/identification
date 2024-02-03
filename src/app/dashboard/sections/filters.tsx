@@ -2,6 +2,7 @@
 import { Add, Commit, Error, WatchLater } from '@mui/icons-material';
 import React from 'react';
 import { FilterCard, _FILTERS } from '../components/filterCard';
+import { Button } from '../components/buttons';
 
 interface IFILTERCHIPPROPS {
   icon: React.ReactNode;
@@ -12,7 +13,7 @@ interface IFILTERCHIPPROPS {
 
 const FilterChip: React.FC<IFILTERCHIPPROPS> = React.memo(({ icon, type, value, index }) => {
   return (
-    <div className="flex items-center gap-2 bg-white rounded-sm py-2 px-4 border border-gray-300 text-sm shadow-sm font-medium">
+    <div className="flex items-center gap-2 bg-background rounded-sm py-2 px-4 border border-border text-sm shadow-sm font-medium">
       {icon}
       <p>
         <span>{type}</span> is <span className="font-bold">{value}</span>
@@ -47,7 +48,7 @@ export default function Filters() {
   };
 
   return (
-    <div className="bg-[#f6f5f5] rounded-sm p-4 flex items-center gap-2 flex-wrap text-sm mx-4 lg:mx-8">
+    <div className="bg-muted rounded-sm p-4 flex items-center gap-2 flex-wrap text-sm mx-4 lg:mx-8">
       {filters
         .filter((item) => currentFilters.includes(item.id))
         .map((filter, index) => (
@@ -58,7 +59,7 @@ export default function Filters() {
         <button
           onClick={handleReset}
           type="button"
-          className="p-2 hover:bg-gray-200 rounded-sm ease-in duration-200 text-gray-500 font-semibold"
+          className="p-2 hover:bg-background rounded-sm ease-in duration-200 text-muted-foreground font-semibold"
         >
           <p>Reset</p>
         </button>

@@ -57,13 +57,13 @@ export function FilterCard(props: IProps) {
       <PopoverTrigger asChild>
         <button
           type="button"
-          className="text-gray-500 p-1 rounded-md border-dotted border-2 border-gray-400 flex items-center font-semibold"
+          className="text-muted-foreground hover:bg-background p-1 rounded-md border-dotted border-2 border-border flex items-center font-semibold"
         >
           <Add fontSize="small" sx={{ color: "gray" }} />
           <p className="text-sm">Add filter </p>
         </button>
       </PopoverTrigger>
-      <PopoverContent className="w-80 bg-gray-50">
+      <PopoverContent className="w-80 bg-popover">
         <div className="grid">
           <div className="space-y-2">
             <h4 className="font-medium leading-none">Select Filters</h4>
@@ -86,10 +86,10 @@ export function FilterCard(props: IProps) {
                 <div
                   key={filter.id}
                   onClick={() => props.handleSelection(filter.id)}
-                  className="flex flex-col ease-in duration-200 hover:bg-gray-50 p-3 rounded-sm cursor-pointer"
+                  className="flex flex-col ease-in duration-200 hover:bg-accent p-3 rounded-sm cursor-pointer"
                 >
                   <Label htmlFor="maxWidth">{filter.type}</Label>
-                  <p className="text-sm text-gray-300">{filter.subText}</p>
+                  <p className="text-sm text-muted-foreground">{filter.subText}</p>
                 </div>
               );
             })}

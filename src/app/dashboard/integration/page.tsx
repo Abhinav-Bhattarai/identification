@@ -6,7 +6,7 @@ import AddPolicyDrawer from './components/addPolicyDrawer';
 
 export default function PolicyPage() {
   return (
-    <main>
+    <main className='space-y-4'>
       <header className="px-4 lg:px-8 flex items-center justify-between gap-4 flex-wrap">
         <div>
           <h1 className="font-bold text-lg">Policies</h1>
