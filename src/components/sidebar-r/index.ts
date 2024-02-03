@@ -1,0 +1,1 @@
+export { default as SidebarR } from './sidebar-r.component';
