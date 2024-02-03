@@ -31,11 +31,11 @@ export default function DatePicker({ className }: React.HTMLAttributes<HTMLDivEl
             id="date"
             variant="outline"
             className={cn(
-              'w-full max-w-[300px] justify-start text-left font-normal rounded-none shadow-none relative inline-flex items-center rounded-l-md px-2 py-4 text-gray-400 hover:text-gray-400 border-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0',
+              'w-full max-w-[300px] justify-start group text-left font-normal rounded-none shadow-none relative inline-flex items-center rounded-l-md px-2 py-4 text-gray-400 hover:text-gray-400 border-border hover:bg-muted focus:z-20 focus:outline-offset-0',
               !date && 'text-muted-foreground'
             )}
           >
-            <span className="px-2 rounded-sm text-[11px] bg-gray-200 mx-2">
+            <span className="px-2 rounded-sm text-[11px] bg-muted group-hover:bg-background mx-2">
               {numberOfDays(date)}d
             </span>
             {date?.from ? (
@@ -51,7 +51,7 @@ export default function DatePicker({ className }: React.HTMLAttributes<HTMLDivEl
             )}
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-auto z-10 p-0 bg-gray-50" align="start">
+        <PopoverContent className="w-auto z-10 p-0 bg-card" align="start">
           <Calendar
             initialFocus
             mode="range"

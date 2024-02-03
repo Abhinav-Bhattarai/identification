@@ -5,7 +5,7 @@ import Statbar from '../dashboard/sections/statbar';
 import EventTable from '../dashboard/sections/table';
 import EventChart from '../dashboard/sections/chart';
 
-const Divider = React.memo(() => <div className="h-[1px] w-full bg-gray-300" />);
+const Divider = React.memo(() => <div className="h-[1px] w-full bg-muted" />);
 Divider.displayName = 'Divider';
 
 function DashboardOverview() {

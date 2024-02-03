@@ -18,7 +18,7 @@ export default function OverviewDetailsView() {
   const settings = useSettingsContext();
 
   return (
-    <Container sx={{ py: 4 }}>
+    <Container sx={{ py: 4 , backgroundColor: 'hsl(var(--muted))'}}>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <Typography
           variant="h5"

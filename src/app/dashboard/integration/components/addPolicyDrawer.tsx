@@ -42,7 +42,7 @@ export default function AddPolicyDrawer() {
             Add More
           </button>
         </SheetTrigger>
-        <SheetContent className="w-screen max-w-screen bg-white lg:max-w-[800px] p-0">
+        <SheetContent className="w-screen max-w-screen bg-background lg:max-w-[800px] p-0">
           <SheetHeader className="flex flex-row items-center gap-4 justify-between flex-wrap p-6 border-b">
             <h2 className="text-muted-foreground font-medium">Policies</h2>
             <div className="flex items-center gap-2 flex-wrap">
@@ -53,7 +53,7 @@ export default function AddPolicyDrawer() {
                 </Button>
               </SheetClose>
               <SheetClose asChild>
-                <Button>
+                <Button className='text-white'>
                   <CheckIcon />
                   <span className="pl-1">Save Changes</span>
                 </Button>

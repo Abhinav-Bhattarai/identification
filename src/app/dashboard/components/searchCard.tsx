@@ -48,12 +48,12 @@ export function SearchCard(props: IProps) {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <div className="flex duration-200 p-2 mx-2 ease-in cursor-pointer rounded-md hover:bg-gray-100 text-sm items-center justify-center font-semibold text-gray-500">
+        <div className="flex duration-200 p-2 mx-2 ease-in cursor-pointer rounded-md hover:bg-muted text-sm items-center justify-center font-semibold text-gray-500">
           <MoreVert fontSize="small" sx={{ color: 'gray' }} />
           <span>More</span>
         </div>
       </PopoverTrigger>
-      <PopoverContent className="w-80 bg-gray-50">
+      <PopoverContent className="w-80 bg-card">
         <div className="grid">
           <div className="space-y-2">
             <h4 className="font-medium leading-none">Select Filters</h4>
@@ -73,7 +73,7 @@ export function SearchCard(props: IProps) {
                 <div
                   key={st.id}
                   onClick={() => props.handleSelection(st.id)}
-                  className="flex items-center space-x-2 ease-in duration-200 hover:bg-gray-50 p-3 rounded-sm cursor-pointer"
+                  className="flex items-center space-x-2 ease-in duration-200 hover:bg-accent p-3 rounded-sm cursor-pointer"
                 >
                   {st.icon}
                   <Label htmlFor="maxWidth">{st.type}</Label>

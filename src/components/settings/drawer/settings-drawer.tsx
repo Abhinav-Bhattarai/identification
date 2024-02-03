@@ -8,6 +8,7 @@ import { useTheme } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Drawer, { drawerClasses } from '@mui/material/Drawer';
+import { useTheme as useShadCNTheme } from "next-themes"
 
 import { paper } from 'src/theme/css';
 
@@ -19,11 +20,13 @@ import PresetsOptions from './presets-options';
 import StretchOptions from './stretch-options';
 import { useSettingsContext } from '../context';
 import FullScreenOption from './fullscreen-option';
+import { set } from 'lodash';
 
 // ----------------------------------------------------------------------
 
 export default function SettingsDrawer() {
   const theme = useTheme();
+  const {setTheme} = useShadCNTheme()
 
   const settings = useSettingsContext();
 
@@ -66,7 +69,12 @@ export default function SettingsDrawer() {
 
       <BaseOptions
         value={settings.themeMode}
-        onChange={(newValue: string) => settings.onUpdate('themeMode', newValue)}
+        onChange={(newValue: string) => 
+        {
+          setTheme(newValue)
+          settings.onUpdate('themeMode', newValue);
+        }
+        }
         options={['light', 'dark']}
         icons={['sun', 'moon']}
       />

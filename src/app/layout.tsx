@@ -16,6 +16,7 @@ import SnackbarProvider from 'src/components/snackbar/snackbar-provider';
 import { SettingsDrawer, SettingsProvider } from 'src/components/settings';
 
 import { AuthProvider } from 'src/auth/context/jwt';
+import { ThemeProvider as ShadCNThemeProvider } from "src/components/ui/theme-provider"
 
 export const metadata = {
   title: 'Rased',
@@ -51,15 +52,21 @@ export default function RootLayout({ children }: Props) {
               }}
             >
               <ThemeProvider>
-                <MotionLazy>
-                  <SnackbarProvider>
-                    {/* <CheckoutProvider> */}
+                <ShadCNThemeProvider
+                  attribute="class"
+                  defaultTheme="system"
+                  enableSystem
+                  disableTransitionOnChange>
+                  <MotionLazy>
+                    <SnackbarProvider>
+                      {/* <CheckoutProvider> */}
                       <SettingsDrawer />
                       <ProgressBar />
                       {children}
-                    {/* </CheckoutProvider> */}
-                  </SnackbarProvider>
-                </MotionLazy>
+                      {/* </CheckoutProvider> */}
+                    </SnackbarProvider>
+                  </MotionLazy>
+                </ShadCNThemeProvider>
               </ThemeProvider>
             </SettingsProvider>
           </LocalizationProvider>
